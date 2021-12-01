@@ -17,6 +17,7 @@ cycler
 decorator
 distlib
 Django
+dj-database-url
 filelock
 Flask
 Flask-RESTful
@@ -87,5 +88,6 @@ virtualenv-clone
 virtualenvwrapper
 wcwidth
 Werkzeug
+whitenoise
 win32-setctime
 wrapt
