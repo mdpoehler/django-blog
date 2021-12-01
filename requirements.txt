@@ -17,7 +17,7 @@ cycler
 decorator
 distlib
 Django
-di-database-url
+dj-database-url
 filelock
 Flask
 Flask-RESTful
