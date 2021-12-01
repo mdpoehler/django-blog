@@ -18,13 +18,15 @@ def stub_view(request, *args, **kwargs):
 
 
 class BlogListView(ListView):
-    queryset = Post.objects.exclude(published_date__exact=None).order_by('-published_date')
-    template_name = 'list.html'
+    queryset = Post.objects.exclude(published_date__exact=None).order_by(
+        "-published_date"
+    )
+    template_name = "list.html"
 
 
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'blogging/detail.html'
+    template_name = "blogging/detail.html"
 
     def post(self, request, post_id):
         published = Post.objects.exclude(published_date__exact=None)
@@ -32,5 +34,5 @@ class BlogDetailView(DetailView):
             post = published.get(pk=post_id)
         except Post.DoesNotExist:
             raise Http404
-        context = {'post': post}
-        return render(request, 'blogging/detail.html', context)
+        context = {"post": post}
+        return render(request, "blogging/detail.html", context)
