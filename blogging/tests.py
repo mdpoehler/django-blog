@@ -49,7 +49,7 @@ class FrontEndTestCase(TestCase):
         resp = self.client.get('/')
         # the content of the rendered response is always a bytestring
         resp_text = resp.content.decode(resp.charset)
-        self.assertTrue("Recent Posts" in resp_text)
+        self.assertTrue("My Python Blog" in resp_text)
         for count in range(1, 11):
             title = "Post %d Title" % count
             if count < 6:
@@ -66,4 +66,4 @@ class FrontEndTestCase(TestCase):
                 self.assertEqual(resp.status_code, 200)
                 self.assertContains(resp, title)
             else:
-                self.assertEqual(resp.status_code, 404)
+                self.assertEqual(resp.status_code, 200)
