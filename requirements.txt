@@ -18,6 +18,7 @@ decorator
 distlib
 Django
 dj-database-url
+django-allauth
 filelock
 Flask
 Flask-RESTful
